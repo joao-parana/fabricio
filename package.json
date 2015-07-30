@@ -1,6 +1,13 @@
 {
-  "name" : "asdrubal",
-  "dependencies" : {
-    "express" : ">=4.0.0"
-  }
+  "name": "asdrubal",
+  "dependencies": {
+    "express": ">=4.0.0",
+    "mocha": "~2.2.5"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {
+   "test": "node_modules/.bin/mocha"
+ }
 }

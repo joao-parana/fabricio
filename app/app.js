@@ -1,8 +1,9 @@
 var express = require('express');
+var fabricFacade = require('./fabricFacade');
 var app = express();
 
 app.get('/', function(req, res) {
-  res.send('Hello World!');
+  res.send(fabricFacade.listCommands());
 });
 
 var server = app.listen(1337, function(){

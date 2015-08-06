@@ -8,7 +8,7 @@ describe("FabricFacade", function() {
 
       it("should return ['foo']", function() {
 
-        var commandList = fabricFacade.listCommands("test/unit/fabfile-foo.py");
+        var commandList = fabricFacade.listCommands("test/scenarios/fabfile-foo.py");
 
         expect(commandList.length).toEqual(1);
         expect(commandList[0]).toEqual("foo");
@@ -16,7 +16,7 @@ describe("FabricFacade", function() {
 
       it("should return ['bar', 'foo']", function() {
 
-        var commandList = fabricFacade.listCommands("test/unit/fabfile-foobar.py");
+        var commandList = fabricFacade.listCommands("test/scenarios/fabfile-foobar.py");
 
         expect(commandList.length).toEqual(2);
         expect(commandList[0]).toEqual("bar");

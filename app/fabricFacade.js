@@ -11,6 +11,8 @@ module.exports = (function () {
 
   function listCommands(fabfile) {
 
+    spawnSync("rm", ["/tmp/fabfile.pyc"]);
+
     if (fabfile) {
       var fabfileParam = ["-f", fabfile];
     }

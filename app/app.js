@@ -4,7 +4,7 @@ var fabricFacade = require('./fabricFacade');
 
 var app = express();
 
-var defaultFabFile = "~/fabfile.py";
+var defaultFabFile = "/tmp/fabfile.py";
 
 app.get('/commands', function(req, res) {
 

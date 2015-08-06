@@ -1,5 +1,7 @@
 var fabricFacade = require('../../app/fabricFacade');
 
+var FabricError = require('../../app/model/FabricError');
+
 describe("FabricFacade", function() {
 
   describe("listCommands", function() {
@@ -24,11 +26,12 @@ describe("FabricFacade", function() {
 
       it("should throw exception when file not found", function() {
 
-        var command = function() {
-          fabricFacade.listCommands("a/b/aspdlsapdlwpk");
-        };
-
-        expect(command).toThrow();
+          try {
+            fabricFacade.listCommands("a/b/aspdlsapdlwpk");
+            fail();
+          } catch(err) {
+            expect(err instanceof FabricError).toBe(true);
+          }
 
       });
   });

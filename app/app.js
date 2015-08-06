@@ -1,9 +1,22 @@
 var express = require('express');
 var fabricFacade = require('./fabricFacade');
+
+
 var app = express();
 
-app.get('/', function(req, res) {
-  res.send(fabricFacade.listCommands());
+var defaultFabFile = "~/fabfile.py";
+
+app.get('/commands', function(req, res) {
+
+  try {
+    var response = fabricFacade.listCommands(defaultFabFile);
+
+    res.send(response);
+
+  } catch(err) {
+    res.status(500).send(err);
+  }
+
 });
 
 var server = app.listen(1337, function(){

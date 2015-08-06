@@ -16,6 +16,11 @@ module.exports = (function () {
     }
 
     var command = spawnSync("fab", ["--shortlist"].concat(fabfileParam));
+
+    if(command.status !== 0) {
+      throw command.stderr.toString();
+    }
+
     return command.stdout.toString().slice(0, -1).split('\n');
   }
 

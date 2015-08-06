@@ -4,9 +4,11 @@
     "express": ">=4.0.0"
   },
   "devDependencies": {
-    "jasmine-node": "*"
+    "jasmine-node": "*",
+    "request": "*"
   },
   "scripts": {
-   "test": "node_modules/.bin/jasmine-node test"
+   "unit-test": "node_modules/.bin/jasmine-node test/unit",
+   "integration-test": "node app/app.js & node_modules/.bin/jasmine-node test/integration && killall -9 node"
  }
 }

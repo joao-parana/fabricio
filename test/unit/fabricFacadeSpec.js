@@ -21,6 +21,16 @@ describe("FabricFacade", function() {
         expect(commandList[1]).toEqual("foo");
 
       });
+
+      it("should throw exception when file not found", function() {
+
+        var command = function() {
+          fabricFacade.listCommands("a/b/aspdlsapdlwpk");
+        };
+
+        expect(command).toThrow();
+
+      });
   });
 
   it("should check that fabricFacade is not undefined", function() {

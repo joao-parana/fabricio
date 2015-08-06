@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node app/app.js",
     "test": "npm run-script unit-test && npm run-script integration-test",
-    "unit-test": "node_modules/.bin/jasmine-node test/unit",
-    "integration-test": "node app/app.js & node_modules/.bin/jasmine-node test/integration && killall -9 node"
+    "unit-test": "node_modules/.bin/jasmine-node test/unit --junitreport",
+    "integration-test": "node app/app.js & node_modules/.bin/jasmine-node test/integration --junitreport && killall -9 node"
  }
 }

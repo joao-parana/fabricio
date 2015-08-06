@@ -6,6 +6,9 @@ var app = express();
 
 var defaultFabFile = "/tmp/fabfile.py";
 
+app.use(express.static(__dirname + '/public'));
+
+
 app.get('/commands', function(req, res) {
 
   try {

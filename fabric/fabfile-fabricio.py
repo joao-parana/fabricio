@@ -38,4 +38,4 @@ def prepare_fabfile():
 def run_docker_container():
     run("echo 'FROM fabricio/fabricio-runtime' >> " + dockerfile_path)
     run("cd " + fabricio_work_dir + "&& docker build -t fabricio/app .")
-    run("docker run -d -p 1337:1337 fabricio/app")
+    run("docker run -d -p 1337:1337 --name fabricio fabricio/app")
